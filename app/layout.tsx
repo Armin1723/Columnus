@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./Favicon.ico";
 
 import "./globals.css";
+import WrapperComponent from "./WrapperComponent";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Columnus",
+  title: "Columns",
   description: "Express Yourself",
+  icons: {
+    icon: "./Favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -17,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}}`}>{children}</body>
+      <body className={`${inter.className}}`}>
+        <WrapperComponent children={children} />
+      </body>
     </html>
   );
 }
