@@ -23,12 +23,13 @@ const layout = ({
           colorInputBackground: primary,
           colorInputText: textPrimary,
           colorNeutral: "gray",
+          colorPrimary: '#6c47ff'
         },
       }}
     >
       <main
         className={`w-screen h-[100dvh] flex justify-between flex-1 flex-col overflow-hidden ${
-          theme === "dark" && "bg-black/90 text-white"
+          theme === "dark" && "bg-black opacity-[95] text-white"
         }`}
       >
         <Navbar />

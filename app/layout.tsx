@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./Favicon.ico";
+import { Mulish } from "next/font/google";
+import  '@/public/Favicon.ico';
 
 import "./globals.css";
 import WrapperComponent from "./WrapperComponent";
 
-const inter = Inter({ subsets: ["latin"] });
+const mulish = Mulish( { subsets : ['latin'], weight : ['400']})
 
 export const metadata: Metadata = {
   title: "Columns",
-  description: "Express Yourself",
-  icons: {
-    icon: "./Favicon.ico",
-  },
+  description: "Express Yourself"
 };
 
 export default function RootLayout({
@@ -22,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}}`}>
+      <body className={`${mulish.className} `}>
         <WrapperComponent children={children} />
       </body>
     </html>

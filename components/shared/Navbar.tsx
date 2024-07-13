@@ -1,26 +1,22 @@
-// 'use client'
+// 'use client';
 import React from "react";
 import { FaMountainSun } from "react-icons/fa6";
 import { Cinzel } from "next/font/google";
 import Link from "next/link";
 import { toggle } from "@/lib/redux/theme/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { SignOutButton, SignedIn, UserButton, useAuth} from "@clerk/nextjs";
+import { SignOutButton, SignedIn, UserButton, useAuth } from "@clerk/nextjs";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { RxAvatar } from "react-icons/rx";
-import { useRouter } from "next/navigation";
 
 const cinzel = Cinzel({ subsets: ["latin"] });
 
 const Navbar = () => {
   const theme = useSelector((state: any) => state.theme.value);
   const dispatch = useDispatch();
-  const router = useRouter()
 
   const { userId } = useAuth()
-  console.log(userId)
-  // if (!userId) router.push('/sign-in')
 
   return (
     <nav
@@ -31,7 +27,7 @@ const Navbar = () => {
       } flex justify-between backdrop-blur-lg items-center h-16 overflow-hidden px-4 border-b sticky top-0 `}
     >
       <Link
-        href="/"
+        href="/" 
         className={`${cinzel.className} navRight logo flex flex-col items-center justify-center h-full select-none`}
       >
         <div className="line1 flex text-3xl max-sm:text-2xl font-extrabold tracking-tighter -mb-1">

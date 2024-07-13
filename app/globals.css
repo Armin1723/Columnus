@@ -5,3 +5,27 @@
 *{
     @apply transition-colors duration-100
 }
+
+*{
+    @apply custom-scrollbar
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar-dark::-webkit-scrollbar{
+    background-color: black;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #6c47ff;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #6c47ff;
+  }
